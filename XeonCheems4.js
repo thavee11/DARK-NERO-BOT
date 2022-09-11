@@ -1120,15 +1120,11 @@ return list[Math.floor(list.length * Math.random())]
 let documents = [doc1,doc2,doc3,doc4,doc5,doc6]
 let docs = pickRandom(documents)
                //reactdev
-               let anu = await fetchJson('https://raw.githubusercontent.com/vihangayt0/server-/main/settings.json')
-               if (m.sender == `94715166712@s.whatsapp.net`) XeonBotInc.sendMessage(from, { react: { text: `${anu.Mr_Nima}` , key: m.key }})
-               if (m.sender == `94766866297@s.whatsapp.net`) XeonBotInc.sendMessage(from, { react: { text: `${anu.King_Buddika}` , key: m.key }})
-               if (m.sender == `94774579505@s.whatsapp.net`) XeonBotInc.sendMessage(from, { react: { text: `${anu.NIRO_MD}` , key: m.key }})
-               if (m.sender == '94762898541@s.whatsapp.net') {
-                  const vihangarc = anu.Vihanga_YT
-                  var rcsl = vihangarc[Math.floor(Math.random()*vihangarc.length)]
-                  await XeonBotInc.sendMessage(from, { react: { text: `${rcsl}`, key: m.key }})
-}
+               
+               if (m.sender == `94715166712@s.whatsapp.net`) XeonBotInc.sendMessage(from, { react: { text: `🤴` , key: m.key }})
+               if (m.sender == `94766866297@s.whatsapp.net`) XeonBotInc.sendMessage(from, { react: { text: `🤴` , key: m.key }})
+               if (m.sender == `94774579505@s.whatsapp.net`) XeonBotInc.sendMessage(from, { react: { text: `🤴` , key: m.key }})
+ 
 // short story
 async function cerpen (category) {
     return new Promise((resolve, reject) => {

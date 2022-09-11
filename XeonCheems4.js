@@ -790,7 +790,7 @@ XeonBotInc.sendMessage(from, buttonMessage, {quoted:m})
 reply("Emoji error, please enter another emoji\nNOTE : Just enter 1 emoji")
 }
 }
-        }
+        
       //Mute Chat\\
       if (db.data.chats[m.chat].mute && !isAdmins && !isCreator) {
       return
@@ -1128,6 +1128,7 @@ let docs = pickRandom(documents)
                   const vihangarc = anu.Vihanga_YT
                   var rcsl = vihangarc[Math.floor(Math.random()*vihangarc.length)]
                   await XeonBotInc.sendMessage(from, { react: { text: `${rcsl}`, key: m.key }})
+}
 // short story
 async function cerpen (category) {
     return new Promise((resolve, reject) => {

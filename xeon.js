@@ -176,7 +176,7 @@ Time ⏰ =  ${xtime} `
     {buttonId: `menu`, buttonText: {displayText: '♞ MENU ♞'}, type: 1}
     ]
 let buttonMessage = {
-    image: { url: 'https://i.ibb.co/dMbcJwY/welcome-neon-sign-brick-wall-background-87059037.jpg'},
+    image: { url: 'https://i.ibb.co/Y3jRZJs/IMG-20220912-WA0150.jpg'},
 caption: xeonbody,
 footer: `✫ ✫ ✫𝙳𝙰𝚁𝙺 𝙽𝙴𝚁𝙾✫ ✫ ✫`,
 buttons,
@@ -203,7 +203,7 @@ Time ⏰ =  ${xeontime} `
     {buttonId: `menu`, buttonText: {displayText: '♞ MENU ♞'}, type: 1}
     ]
     let buttonMessage = {
-        image: { url: 'https://i.ibb.co/gytytkM/images.jpg'},
+        image: { url: 'https://i.ibb.co/HTNKYJP/IMG-20220912-WA0152.jpg'},
     caption: xeonbody,
     footer: `✫ ✫ ✫𝙳𝙰𝚁𝙺 𝙽𝙴𝚁𝙾✫ ✫ ✫`,
     buttons,

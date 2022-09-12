@@ -6704,58 +6704,6 @@ sourceUrl: args[0]
 XeonBotInc.sendMessage(from, buttonMessage, {quoted:m})
 }
 break
-case 'fb' :
-    case 'facebook' :
-        XeonBotInc.sendMessage(from, { react: { text: `💛`, key: m.key }})
-    try {
-   if (!q) return await XeonBotInc.sendMessage(from , { text: 'need fb link' }, { quoted: m } )      
-   const isfb = q.includes('facebook.com')? q.includes('facebook.com') : q.includes('fb.watch')? q.includes('fb.watch') : ''
-       if (!isfb) return await XeonBotInc.sendMessage(from , { text: 'need fb link' }, { quoted: m } )  
-  const msg = '*Kaveesha* MD FB Downloder\n\n*📥Quality එක තෝරන්න්න📤*'
-const buttons = [
-{buttonId: 'fbsd ' + q, buttonText: {displayText: '480p'}, type: 1},
-{buttonId: 'fbhd ' + q, buttonText: {displayText: '720p'}, type: 1},
-]
-await XeonBotInc.sendMessage(from, {  text: msg , footer: `✫ ✫ ✫𝙳𝙰𝚁𝙺 𝙽𝙴𝚁𝙾✫ ✫ ✫` , buttons: buttons , headerType: 4} , { quoted: m } )  
-
-    } catch(e) {
-  await XeonBotInc.sendMessage(from , { text: 'error\n\n' + e }, { quoted: m } )      
-    }      
-    break
-
-    case 'fbhd' : 
-        try {
-  if (!q) return await XeonBotInc.sendMessage(from , { text: 'need fb link' }, { quoted: m } )
-  const data = await axios.get('https://api-bobiz.herokuapp.com/api/fb?url=' + q)
-  const file = data.data[0]
-
-const fileup = await XeonBotInc.sendMessage(from , { text: 'Downloading...' }, { quoted: m } )
-await XeonBotInc.sendMessage(from, { delete: fileup.key })
-const filedown = await XeonBotInc.sendMessage(from , { text: 'Uploading...' }, { quoted: m } )
-const doc = await XeonBotInc.sendMessage(from , { video : { url : file.url  } ,  caption : `${global.cap}` } , { quoted: m })
-await XeonBotInc.sendMessage(from, { delete: filedown.key })	
-  } 
-  catch(e) {
-      await XeonBotInc.sendMessage(from , { text: 'error\n\n' + e }, { quoted: m } )
-  }
-        break
-
-          case 'fbsd' : 
-        try {
-  if (!q) return await XeonBotInc.sendMessage(from , { text: 'need fb link' }, { quoted: m } )
-  const data = await axios.get('https://api-bobiz.herokuapp.com/api/fb?url=' + q)
-  const file = data.data[1]
-
-const fileup = await XeonBotInc.sendMessage(from , { text: 'Downloading...' }, { quoted: m } )
-await XeonBotInc.sendMessage(from, { delete: fileup.key })
-const filedown = await XeonBotInc.sendMessage(from , { text: 'Uploading...' }, { quoted: m } )
-const doc = await XeonBotInc.sendMessage(from , { video : { url : file.url  } ,  caption : `${global.cap}` } , { quoted: m })
-await XeonBotInc.sendMessage(from, { delete: filedown.key })	
-  } 
-  catch(e) {
-      await XeonBotInc.sendMessage(from , { text: 'error\n\n' + e }, { quoted: m } )
-  }
-        break
             case 'pinterest2': {
             	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -8149,24 +8097,62 @@ break
                 XeonBotInc.sendText(m.chat, `${themeemoji} *Results :* ${anu.message}`, m)
             }
             break
-            case "tiktok" : 
-            XeonBotInc.sendMessage(from, { react: { text: `🧸`, key: m.key }})
-          try {
-          if (!q) return await XeonBotInc.sendMessage(from , { text: 'need tiktok link' }, { quoted: mek } )
-          if (!q.includes('tiktok')) return await XeonBotInc.sendMessage(from , { text: 'need tiktok link' }, { quoted: mek } )
-          const data = await axios.get('https://api-bobiz.herokuapp.com/api/tiktok?url=' + q)
-          const file = data.data
-    const fileup = await XeonBotInc.sendMessage(from , { text: 'downloading...' }, { quoted: mek } )
-    await XeonBotInc.sendMessage(from, { delete: fileup.key })
-    const filedown = await XeonBotInc.sendMessage(from , { text: 'uploading...' }, { quoted: mek } )
-    const doc = await XeonBotInc.sendMessage(from , { video : { url : file.no_watermark  } , caption : `${global.cap}` } , { quoted: mek })
-    await XeonBotInc.sendMessage(from, { delete: filedown.key })	
-          } 
-          catch(e) {
-              await XeonBotInc.sendMessage(from , { text: 'cant download' + e }, { quoted: mek } )
+            case 'tiktok': {
+              if (isBan) return XeonBotInc.sendMessage(from, { react: { text: `❌`, key: m.key }})
+                       
+                      await XeonBotInc.sendMessage(from, { react: { text: `⬆️`, key: m.key }})
+                       if (!text) throw '*Enter a Link Query!*'          
+                       let bocil = require('@bochilteam/scraper')   
+                       if (!isUrl(args[0]) && !args[0].includes('tiktok.com')) throw '*The link you provided is not valid*'                
+                       bocil.tiktokdlv3(`${text}`).then(async (video) => {           
+                                           
+                         buf = await getBuffer(global.tiktokthub)
+                         const up = await XeonBotInc.sendText(m.chat, `*Im Downloading Your ${m.pushName} Video ... 🔄*`)
+                         await XeonBotInc.sendMessage(m.chat, { video: { url: video.video.no_watermark },caption: `${global.cap}`}, { quoted: m }) 
+                         await XeonBotInc.sendMessage(m.chat,{delete : up.key })  
+                         await XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }}) 
+                         }).catch((err) => {
+                           XeonBotInc.sendText(m.chat, '*CANT DOWNLOAD ❗*')})
+                    }
+                    break
+                  case 'twiter' : case 'ig': case 'igvid' : case 'fb': case 'getvid': {
+              if (isBan) return XeonBotInc.sendMessage(from, { react: { text: `❌`, key: m.key }})
+                         
+                      await XeonBotInc.sendMessage(from, { react: { text: `⬆️`, key: m.key }})
+      
+      if (!text) throw '*Need link*'
+      let anu = await fetchJson('https://raw.githubusercontent.com/vihangayt0/server-/main/settings.json')
+      var buf = await getBuffer(anu.THUMB) 
+      const download = await XeonBotInc.sendText(m.chat, `*Im Downloading Your ${m.pushName} Video ... 🔄*`)
+      
+            let bicil = require('@bochilteam/scraper')
+      
+            let urlnya = text
+      
+            bicil.savefrom(urlnya)
+      
+            .then(async(result) => {	  	                                	                      	            
+      
+            for(let i of result.url) {		
+      
+            if(i.url.includes('mp4')){		           			    				
+      
+            let link = await getBuffer(i.url)
+         await XeonBotInc.sendMessage(m.chat, { delete: download.key })	
+         const uplode = await XeonBotInc.sendText(m.chat, `*Please Wait Processing ${m.pushName} Video ... 🔄*`)
+      
+            XeonBotInc.sendMessage(m.chat, { video: link, jpegThumbnail:buf,caption: `${global.cap}` }, { quoted: m }) 
+            await XeonBotInc.sendMessage(m.chat, { delete: uplode.key })    
+                      await XeonBotInc.sendMessage(from, { react: { text: `✅`, key: m.key }})          
+      
+           }
+      
           }
-                
-            break  
+      
+        }).catch((err) => m.reply('*SORRY I CANT DOWNLOAD ❗*'))
+      
+        }		
+        break
 	    case 'play': case 'yt': { 
         XeonBotInc.sendMessage(from, { react: { text: `🔎`, key: m.key }})    
             if (!text) return reply(`Example : ${prefix + command} lelena`)

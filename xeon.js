@@ -173,7 +173,7 @@ Time ⏰ =  ${xtime} `
    //you fail to put, i sue you for sure!
    let buttons = [
     {buttonId: `owner`, buttonText: {displayText: '👍 WELCOME 👍'}, type: 1},
-    {buttonId: `menu`, buttonText: {displayText: '♞ MENU ♞'}, type: 1}
+    {buttonId: `menu`, buttonText: {displayText: '♞ 𝙳𝙰𝚁𝙺 𝙽𝙴𝚁𝙾 ♞'}, type: 1}
     ]
 let buttonMessage = {
     image: { url: 'https://i.ibb.co/Y3jRZJs/IMG-20220912-WA0150.jpg'},
@@ -200,7 +200,7 @@ Time ⏰ =  ${xeontime} `
 
    let buttons = [
     {buttonId: `owner`, buttonText: {displayText: '🐼 BYE 🐼'}, type: 1},
-    {buttonId: `menu`, buttonText: {displayText: '♞ MENU ♞'}, type: 1}
+    {buttonId: `menu`, buttonText: {displayText: '♞ 𝙳𝙰𝚁𝙺 𝙽𝙴𝚁𝙾♞'}, type: 1}
     ]
     let buttonMessage = {
         image: { url: 'https://i.ibb.co/HTNKYJP/IMG-20220912-WA0152.jpg'},

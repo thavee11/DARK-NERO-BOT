@@ -17,7 +17,7 @@ global.REACT_NUMBER = '94774579505'
 
 
 //chatbot on/off
-global.chatbot=  true //chat bot (true toon,fale to off )
+global.chatbot=  false //chat bot (true toon,fale to off )
 
 
 //aumto functioner

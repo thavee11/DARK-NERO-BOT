@@ -16,6 +16,12 @@ global.OWNER_REACT = '🧑🏻‍💻'
 global.REACT_NUMBER = '94774579505'
 
 
+
+//alive logo 
+
+global.alivepic = "https://i.ibb.co/BB1DX2C/Whats-App-Image-2022-09-12-at-9-02-23-AM.jpg" //you logo key 
+
+
 //chatbot on/off
 global.chatbot=  false //chat bot (true toon,fale to off )
 
